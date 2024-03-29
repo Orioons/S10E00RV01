@@ -1,0 +1,181 @@
+
+const _0x1a0d7e = _0x19e6;
+(function(_0x3336c5, _0x3bc4aa) {
+	const _0x4c65fe = _0x19e6
+		, _0x4e3b7d = _0x3336c5();
+	while (!![]) {
+		try {
+			const _0x1d3985 = parseInt(_0x4c65fe(0xe6)) / 0x1 * (parseInt(_0x4c65fe(0xe1)) / 0x2) + parseInt(_0x4c65fe(0xf7)) / 0x3 + parseInt(_0x4c65fe(0xd9)) / 0x4 + -parseInt(_0x4c65fe(0xdc)) / 0x5 * (-parseInt(_0x4c65fe(0xe3)) / 0x6) + parseInt(_0x4c65fe(0xc4)) / 0x7 * (-parseInt(_0x4c65fe(0xca)) / 0x8) + parseInt(_0x4c65fe(0xda)) / 0x9 * (parseInt(_0x4c65fe(0x102)) / 0xa) + -parseInt(_0x4c65fe(0xfc)) / 0xb;
+			if (_0x1d3985 === _0x3bc4aa) break;
+			else _0x4e3b7d['push'](_0x4e3b7d['shift']());
+		} catch (_0x27f774) {
+			_0x4e3b7d['push'](_0x4e3b7d['shift']());
+		}
+	}
+}(_0xfd3d, 0x4496e));
+
+function _0xfd3d() {
+	const _0x2ec757 = ['npm\x20dependencies\x20installed:', '286VKTwdA', 'isFile', '33222EDpyQC', 'length', 'stringify', '3889qVwYwF', 'Error\x20checking\x20storage\x20usage:', 'readdir', 'express', 'parse', '/storage-usage', 'package.json\x20not\x20found.\x20Make\x20sure\x20your\x20project\x20has\x20a\x20package.json\x20file.', 'Error\x20reading\x20subscription\x20expiry\x20date:', 'npm\x20install', './worker/pauseRoute', 'Error\x20installing\x20npm\x20dependencies:', 'App\x20service\x20Running', 'end', 'json', 'ENOENT', 'Server\x20running\x20on\x20port\x20', 'pm2', '837882kFAgPa', 'getTime', 'get', 'status', 'replace', '10419827oWhiiW', 'existsSync', 'node-cron', 'npm\x20dependencies\x20installed\x20successfully', 'writeFile', './quota.json', '270ndqqKv', 'config', '/pause', '/_m_t_f_run_status_tail.json', '70XTOwDL', 'package.json', 'code', 'disconnect', './worker/storageRoute', 'Error\x20installing\x20npm\x20dependencies', '67328NywvlU', 'utf8', 'isDirectory', './worker/restartRoute', 'readFile', 'post', 'error', './mimo.json', 'use', 'log', 'webapppublic', '/upload', 'join', 'path', 'Service\x20Paused:\x20Node', '540600mnzxUa', '93627JVUzHK', 'connect', '55XFyUTv', 'child_process', 'dotenv', 'expiryDate'];
+	_0xfd3d = function() {
+		return _0x2ec757;
+	};
+	return _0xfd3d();
+}
+const express = require(_0x1a0d7e(0xe9))
+	, app = express()
+	, bodyParser = require('body-parser')
+	, path = require(_0x1a0d7e(0xd7))
+	, fs = require('fs')
+	, pm2 = require(_0x1a0d7e(0xf6))
+	, cron = require(_0x1a0d7e(0xfe))
+	, {
+		exec
+	} = require(_0x1a0d7e(0xdd));
+require(_0x1a0d7e(0xde))[_0x1a0d7e(0x103)]();
+const uploadRoute = require('./worker/uploadRoute')
+	, preloadRoute = require('./worker/preloadRoute')
+	, startRoute = require('./worker/startRoute')
+	, pauseRoute = require(_0x1a0d7e(0xef))
+	, restartRoute = require(_0x1a0d7e(0xcd))
+	, storageRoute = require(_0x1a0d7e(0xc8));
+app[_0x1a0d7e(0xd2)](bodyParser['json']()), app['use'](_0x1a0d7e(0xd5), uploadRoute), app['use']('/preload', preloadRoute), app['use']('/start', startRoute), app[_0x1a0d7e(0xd2)](_0x1a0d7e(0x104), pauseRoute), app[_0x1a0d7e(0xd2)]('/restart', restartRoute), app[_0x1a0d7e(0xd2)](_0x1a0d7e(0xeb), storageRoute);
+const PORT = process['env']['PORT'];
+app['listen'](PORT, () => {
+	const _0x50999f = _0x1a0d7e;
+	console[_0x50999f(0xd3)](_0x50999f(0xf5) + PORT);
+}), app[_0x1a0d7e(0xf9)]('/', (_0x4280e4, _0x53fe00) => {
+	const _0x5550a1 = _0x1a0d7e;
+	_0x53fe00[_0x5550a1(0xf2)](_0x5550a1(0xf1));
+}), app[_0x1a0d7e(0xcf)]('/depsRound', (_0x572a62, _0x20c2d3) => {
+	const _0x5d59c2 = _0x1a0d7e
+		, _0x1c78d7 = path[_0x5d59c2(0xd6)](__dirname, './webapppublic')
+		, _0x3f5b15 = path['join'](_0x1c78d7, _0x5d59c2(0xc5));
+	if (!fs[_0x5d59c2(0xfd)](_0x3f5b15)) return _0x20c2d3[_0x5d59c2(0xfa)](0x194)[_0x5d59c2(0xf3)]({
+		'error': _0x5d59c2(0xec)
+	});
+	exec(_0x5d59c2(0xee), {
+		'cwd': _0x1c78d7
+	}, (_0x5c89ca, _0x56fe54, _0x4f334a) => {
+		const _0x4620cd = _0x5d59c2;
+		if (_0x5c89ca) return console[_0x4620cd(0xd0)](_0x4620cd(0xf0), _0x5c89ca), _0x20c2d3[_0x4620cd(0xfa)](0x1f4)['json']({
+			'error': _0x4620cd(0xc9)
+		});
+		console['log'](_0x4620cd(0xe0), _0x56fe54), _0x20c2d3[_0x4620cd(0xfa)](0xc8)[_0x4620cd(0xf3)]({
+			'message': _0x4620cd(0xff)
+		});
+	});
+});
+
+function _0x19e6(_0x4b5798, _0x257bae) {
+	const _0xfd3d08 = _0xfd3d();
+	return _0x19e6 = function(_0x19e66f, _0x4e8cb9) {
+		_0x19e66f = _0x19e66f - 0xc3;
+		let _0xcc54ea = _0xfd3d08[_0x19e66f];
+		return _0xcc54ea;
+	}, _0x19e6(_0x4b5798, _0x257bae);
+}
+
+function getDirectorySize(_0x467a04, _0x101fde) {
+	const _0x2794db = _0x1a0d7e;
+	let _0x5baeb5 = 0x0;
+	fs[_0x2794db(0xe8)](_0x467a04, (_0x2bf9c3, _0x496002) => {
+		const _0x5bb1df = _0x2794db;
+		if (_0x2bf9c3) return _0x101fde(_0x2bf9c3);
+		let _0x3f1235 = _0x496002[_0x5bb1df(0xe4)];
+		if (_0x3f1235 === 0x0) return _0x101fde(null, _0x5baeb5);
+		_0x496002['forEach'](_0xf0db45 => {
+			const _0x1fb6b0 = path['join'](_0x467a04, _0xf0db45);
+			fs['stat'](_0x1fb6b0, (_0x46ca48, _0x47f587) => {
+				const _0x878274 = _0x19e6;
+				if (_0x46ca48) {
+					if (_0x46ca48[_0x878274(0xc6)] === _0x878274(0xf4)) {
+						--_0x3f1235 === 0x0 && _0x101fde(null, _0x5baeb5);
+						return;
+					} else return _0x101fde(_0x46ca48);
+				}
+				if (_0x47f587[_0x878274(0xe2)]()) _0x5baeb5 += _0x47f587['size'];
+				else _0x47f587[_0x878274(0xcc)]() && getDirectorySize(_0x1fb6b0, (_0x28d1bd, _0x3add03) => {
+					if (_0x28d1bd) return _0x101fde(_0x28d1bd);
+					_0x5baeb5 += _0x3add03, --_0x3f1235 === 0x0 && _0x101fde(null, _0x5baeb5);
+				});
+				--_0x3f1235 === 0x0 && _0x101fde(null, _0x5baeb5);
+			});
+		});
+	});
+}
+
+function checkExpire() {
+	const _0xffc1da = _0x1a0d7e
+		, _0x2bae6f = path['join'](__dirname, _0xffc1da(0xd1));
+	fs[_0xffc1da(0xce)](_0x2bae6f, _0xffc1da(0xcb), (_0x571abd, _0x5c97ea) => {
+		const _0x511ddf = _0xffc1da;
+		_0x571abd && console[_0x511ddf(0xd0)](_0x511ddf(0xed), _0x571abd);
+		const _0x7e05e3 = JSON[_0x511ddf(0xea)](_0x5c97ea)
+			, _0x1797fb = new Date(_0x7e05e3[_0x511ddf(0xdf)])[_0x511ddf(0xf8)]()
+			, _0x2d3ff2 = new Date()[_0x511ddf(0xf8)]();
+		if (_0x1797fb - _0x2d3ff2 > 0x1) {
+			const _0x4f4145 = path[_0x511ddf(0xd6)](__dirname, _0x511ddf(0x101))
+				, _0x2f5a1a = {
+					'storage': 0x0
+				};
+			fs[_0x511ddf(0x100)](_0x4f4145, JSON['stringify'](_0x2f5a1a), 'utf8', _0x3dc7cb => {
+				if (_0x3dc7cb) {}
+			});
+		} else fs[_0x511ddf(0x100)]('./_m_t_f_run_status_tail.json', JSON[_0x511ddf(0xe5)]({
+			'status': 0x0
+		}), _0x309b84 => {
+			const _0x6a3d6d = _0x511ddf;
+			if (_0x309b84) {} else console['log'](_0x6a3d6d(0xd8));
+		});
+	});
+}
+
+function checkStorageAndPauseIfQuotaExceeded() {
+	const _0x234808 = _0x1a0d7e
+		, _0x52c7eb = path[_0x234808(0xd6)](__dirname, 'quota.json')
+		, _0x1b1c94 = path[_0x234808(0xd6)](__dirname, _0x234808(0xd4));
+	fs['readFile'](_0x52c7eb, _0x234808(0xcb), (_0x501370, _0x34dc3c) => {
+		const _0xa2b0b3 = _0x234808;
+		if (_0x501370) {
+			console[_0xa2b0b3(0xd0)]('Error\x20reading\x20quota:', _0x501370);
+			return;
+		}
+		const _0xc17d2a = JSON['parse'](_0x34dc3c)
+			, _0x29f8b3 = _0xc17d2a['storage'];
+		getDirectorySize(path[_0xa2b0b3(0xd6)](__dirname, '/webapppublic'), (_0x5e86cb, _0x6cecac) => {
+			const _0x5caeaf = _0xa2b0b3;
+			if (_0x5e86cb) {
+				console[_0x5caeaf(0xd0)](_0x5caeaf(0xe7), _0x5e86cb);
+				return;
+			}
+			const _0x2bf65d = _0x6cecac / (0x400 * 0x400);
+			if (_0x2bf65d > _0x29f8b3) {
+				const _0x4d5dca = path[_0x5caeaf(0xd6)](__dirname, '/_m_t_f_config_tail.json')
+					, _0x3078cf = path[_0x5caeaf(0xd6)](__dirname, _0x5caeaf(0xc3));
+				fs[_0x5caeaf(0xce)](_0x4d5dca, _0x5caeaf(0xcb), (_0x3b5eea, _0x38cb45) => {
+					const _0x462ead = _0x5caeaf;
+					_0x3b5eea && console[_0x462ead(0xd0)](_0x3b5eea);
+					const _0x2fd71c = JSON[_0x462ead(0xea)](_0x38cb45)
+						, {
+							fileName: _0x3dacbf
+						} = _0x2fd71c;
+					pm2[_0x462ead(0xdb)](_0x2dd11d => {
+						const _0x17a8cd = _0x462ead;
+						_0x2dd11d && console[_0x17a8cd(0xd0)](_0x2dd11d), pm2['stop'](_0x3dacbf[_0x17a8cd(0xfb)]('.js', ''), _0x402830 => {
+							const _0x3e5306 = _0x17a8cd;
+							_0x402830 && (console[_0x3e5306(0xd0)](_0x402830), pm2[_0x3e5306(0xc7)]()), fs[_0x3e5306(0x100)](_0x3078cf, JSON['stringify']({
+								'status': 0x0
+							}), _0x2662e4 => {
+								const _0x17f020 = _0x3e5306;
+								_0x2662e4 && (console[_0x17f020(0xd0)](_0x2662e4), pm2[_0x17f020(0xc7)]()), pm2[_0x17f020(0xc7)]();
+							});
+						});
+					});
+				});
+			}
+		});
+	});
+}
+setInterval(checkExpire, 0x5265c00), setInterval(checkStorageAndPauseIfQuotaExceeded, 0x36ee80);
+
+   
